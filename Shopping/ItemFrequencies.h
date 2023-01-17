@@ -2,6 +2,7 @@
 #define ITEMFREQUENCIES_H
 #include<vector>
 #include<string>
+#include<iostream>
 using namespace std;
 
 class ItemFrequencies
@@ -10,6 +11,7 @@ class ItemFrequencies
 		vector<int> frequence;
 		vector<string> item;
 	public:
-		ItemFrequencies(vector<string> feed);
+		ItemFrequencies(vector<string>& feed);
+		void getStats();
 };
 #endif

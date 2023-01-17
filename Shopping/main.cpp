@@ -2,10 +2,11 @@
 #include<fstream>
 #include<vector>
 #include<string>
+#include"ItemFrequencies.h"
 
 using namespace std;
 
-void readFile(ifstream& file, vector<string>& targetVec);
+void file2Vec(ifstream& file, vector<string>& targetVec);
 
 
 int main()
@@ -14,14 +15,20 @@ int main()
 
 	vector<string> myVec;
 
+	myIfstream.open("shopping.txt");
 
+	file2Vec(myIfstream, myVec);
+
+	ItemFrequencies myItem(myVec);
+
+	myItem.getStats();
 
 	myIfstream.close();
 
 	return 0;
 }
 
-void readFile(ifstream& file, vector<string>& targetVec)
+void file2Vec(ifstream& file, vector<string>& targetVec)
 {
 	string temp;
 	while (!file.eof())
